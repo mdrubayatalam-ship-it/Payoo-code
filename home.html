@@ -39,6 +39,7 @@
       * {
         font-family: "Outfit", sans-serif;
       }
+      
     </style>
   </head>
   <body class="min-h-screen max-w-md bg-base-200 mx-auto">
@@ -69,11 +70,11 @@
                    <p class="opacity-60">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
                    <div class="buttons grid grid-cols-3 gap-3">
-                          <button class="btn flex-col h-full px-[39px] py-[20px] btn-primary btn-soft">
+                          <button onclick="showOnly('Add-Money')" class="btn flex-col h-full px-[39px] py-[20px] btn-primary btn-soft">
                                 <img src="assets/opt-1.png" alt="">
                                 <span class="font-normal">Add Money</span>
                           </button>
-                          <button class="btn flex-col h-full px-[39px] py-[20px] btn-primary btn-soft">
+                          <button onclick="showOnly('Cashout')" class="btn flex-col h-full px-[39px] py-[20px] btn-primary btn-soft">
                                 <img src="assets/opt-2.png" alt="">
                                 <span class="font-normal">Cashout</span>
                           </button>
@@ -98,7 +99,7 @@
                    
         </section>
 
-                <section id="Cashout" class="w-11/12 mx-auto py-5">
+                <section id="Add-Money" class="w-11/12 mx-auto py-5 hidden">
             <h2 class="text-xl font-bold">Add Money</h2>
                      <div class="form pt-[10px]">
     <div class="card bg-base-100 w-full shadow-xl rounded-[24px]">
@@ -106,7 +107,7 @@
         <fieldset class="fieldset">
 
           <label  class="label font-bold text-neutral">Bank Account Number</label>
-          <select class="select rounded-full w-full">
+          <select id="add-money-bank" class="select rounded-full w-full">
             <option disabled selected>Select a Bank</option>
             <option value="City Bank PLC">City Bank PLC </option>
             <option value="Eastern Bank PLC">Eastern Bank PLC</option>
@@ -124,13 +125,13 @@
           <label class="label font-bold text-neutral">Pin Number</label>
           <input id="digit" maxlength="4" minlength="4" type="password" class="input rounded-full w-full" placeholder="Enter pin number" />
         
-          <button id="Cashout-btn" class="btn btn-primary rounded-full mt-4">Add Money</button>
+          <button id="addMoney-btn" class="btn btn-primary rounded-full mt-4">Add Money</button>
         </fieldset>
       </div>
          </div>
         </section>
 
-        <section id="Cashout" class="w-11/12 mx-auto py-5">
+        <section id="Cashout" class="w-11/12 mx-auto py-5 hidden">
             <h2 class="text-xl font-bold">Cashout</h2>
                      <div class="form pt-[10px]">
     <div class="card bg-base-100 w-full shadow-xl rounded-[24px]">
@@ -151,7 +152,8 @@
          </div>
         </section>
                   
-        <script src="java/machine.js"></script>            
+        <script src="java/machine.js"></script>
+        <script src="java/addmoney.js"></script>            
         <script src="java/cashout.js"></script>
 
   </body>
