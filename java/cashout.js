@@ -158,6 +158,26 @@ document.getElementById("Cashout-btn").addEventListener("click", function(){
         alert("Cashout Successful!");
         console.log("Pin: ", getPin);
         setBalance(newBalance);
+         
+         //  History
+        // 1--history container k sorai niye asbo
+        const history = document.getElementById("history-container");
+        // 2--new div create korbo
+        const newHistory = document.createElement("div");
+        // 3--new div innerHtml e add korbo
+        newHistory.innerHTML = `
+         
+             <div class="transaction-card p-5 bg-base-100">
+                           Cashout Successfully BDT ${getCashoutAmount}tk from ${getCashoutNumber} at ${new Date()} balance: ${newBalance} tk
+             </div>
+         
+        `
+        //4----- append korbo
+              
+         history.append(newHistory);
+
+
+
     }
 
     else
